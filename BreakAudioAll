@@ -1,0 +1,13 @@
+public static void BreakAudioAll()
+        {
+            if (rightTrigger > 0.5f)
+            {
+                GorillaTagger.Instance.myVRRig.RPC("PlayHandTap", RpcTarget.Others, new object[]{
+                    111,
+                    false,
+                    999999f
+                });
+            }
+        }
+    }
+}
