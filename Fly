@@ -1,0 +1,22 @@
+public static void Fly()
+        {
+            if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+            {
+                GorillaLocomotion.Player.Instance.transform.position += GorillaLocomotion.Player.Instance.headCollider.transform.forward * Time.deltaTime * 13f;
+                GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                foreach (MeshCollider meshCollider in Resources.FindObjectsOfTypeAll<MeshCollider>())
+                {
+                    meshCollider.enabled = false;
+                }
+            }
+            else
+            {
+                foreach (MeshCollider meshCollider2 in Resources.FindObjectsOfTypeAll<MeshCollider>())
+                {
+                    meshCollider2.enabled = true;
+                }
+            }
+        }
+
+    }
+}
